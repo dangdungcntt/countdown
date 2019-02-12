@@ -21,6 +21,9 @@
                                 <th>Template</th>
                                 <th>End Time</th>
                                 <th>URL</th>
+                                @can('index_all', \App\Site::class)
+                                    <th>Author</th>
+                                @endcan
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,9 +42,12 @@
                                     <td>{{ data_get($site, 'data.end_time') }}</td>
                                     <td>
                                         <a href="{{ route('sites.show', $site->slug) }}" target="_blank">
-                                            {{ str_limit(route('sites.show', $site->slug), 100) }}
+                                            {{ str_limit(route('sites.show', $site->slug), 50) }}
                                         </a>
                                     </td>
+                                    @can('index_all', \App\Site::class)
+                                        <td>{{ data_get($site, 'author.name') }}</td>
+                                    @endcan
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{ route('sites.edit', $site->id) }}"

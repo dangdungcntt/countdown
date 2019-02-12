@@ -10,6 +10,7 @@ use App\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
 
 class SiteController extends Controller
 {
@@ -33,7 +34,7 @@ class SiteController extends Controller
         $sites = Gate::allows('index_all', Site::class)
                 ? Site::all() : $user->sites()->get();
 
-        $sites->load('template');
+        $sites->load(['template', 'author']);
 
         return view('sites.index', compact('sites'));
     }

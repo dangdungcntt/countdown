@@ -30,7 +30,7 @@ class SiteStore extends FormRequest
             'name' => 'required|string',
             'slug' => 'required|string|unique:sites,slug',
             'template_id' => 'required|exists:templates,id',
-            'author' => 'required|exists:users,id',
+            'author_id' => 'required|exists:users,id',
             'data' => 'required|array',
             'data.end_time' => 'required|date',
             'data.logo_url' => 'nullable|url',
@@ -51,7 +51,7 @@ class SiteStore extends FormRequest
     {
         $this->merge([
             'slug' => str_slug($this->get('slug')),
-            'author' => Auth::user()->getAuthIdentifier()
+            'author_id' => Auth::user()->getAuthIdentifier()
         ]);
     }
 }

@@ -20,10 +20,10 @@ class CreateSitesTable extends Migration
             $table->text('data');
             $table->boolean('is_draft')->default(true);
             $table->unsignedInteger('template_id');
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->timestamps();
 
-            $table->foreign('author')
+            $table->foreign('author_id')
                 ->references('id')
                 ->on('users');
 

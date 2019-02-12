@@ -15,7 +15,7 @@ class Site extends Model
     protected $table = 'sites';
 
     protected $fillable = [
-        'name', 'slug', 'template_id', 'author', 'data'
+        'name', 'slug', 'template_id', 'author_id', 'data'
     ];
 
     protected $casts = [
@@ -27,6 +27,11 @@ class Site extends Model
     public function template()
     {
         return $this->belongsTo(Template::class, 'template_id', 'id');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 
     //static function
