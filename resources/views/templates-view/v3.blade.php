@@ -26,7 +26,7 @@
 			<div class="display-table-cell">
 				
 				<h1 class="title font-white"><b>{{ data_get($data, 'title', 'Comming Soon') }}</b></h1>
-				<p class="desc font-white">{{ data_get($data, 'sub_tile', 'Our website is currently undergoing scheduled maintenance. We Should be back shortly. Thank you for your patience.') }}</p>
+				<p class="desc font-white">{{ data_get($data, 'sub_title', 'Our website is currently undergoing scheduled maintenance. We Should be back shortly. Thank you for your patience.') }}</p>
 				
 				<ul class="social-btn font-white">
 					<li><a href="{{ data_get($data, 'facebook_url', '#') }}">facebook</a></li>
