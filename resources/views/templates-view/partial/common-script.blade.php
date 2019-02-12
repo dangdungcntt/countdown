@@ -12,4 +12,4 @@
 
 <script src="{{ asset('templates-view/common-js/jquery.throttle.js') }}"></script>
 
-<script src="{{ asset('templates-view/common-js/scripts.js') }}"></script>
+<script src="{{ asset('templates-view/common-js/scripts.js') }}?v=201902121311"></script>

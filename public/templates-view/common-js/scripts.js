@@ -64,6 +64,13 @@
 	// Circular Progress Bar
 	
 	var isAnimated = false;
+
+	//append button
+	$('body').append(`
+		<div style="position: fixed;bottom: 10px;right: 10px;z-index: 1;background: #ffdf3a;padding: 6px 10px;border-radius: 5px;border: #444 1px solid;font-weight: bold;text-transform: uppercase;">
+			<a href="/" target="_blank">Create your countdown</a>
+		</div>
+	`)
 	
 	
 })(jQuery);
