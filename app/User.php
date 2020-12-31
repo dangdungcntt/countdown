@@ -36,6 +36,6 @@ class User extends Authenticatable
     ];
 
     public function sites() {
-        return $this->hasMany(Site::class, 'author', 'id');
+        return $this->hasMany(Site::class, 'author_id', 'id');
     }
 }
